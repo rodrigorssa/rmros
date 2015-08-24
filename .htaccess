@@ -1,0 +1,3 @@
+ErrorDocument 404 /tcc/notfound.html
+
+Options -Indexes
