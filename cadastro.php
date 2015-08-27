@@ -22,7 +22,7 @@ $obj= new users();
 	$obj->sobrenome=$sobre;
 	$obj->email=$mail;
 	$obj->login=$user;
-	$obj->senha=$pass;
+	$obj->senha=sha1($pass);
 	
 
 

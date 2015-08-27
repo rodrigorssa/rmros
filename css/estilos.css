@@ -522,35 +522,6 @@ right: 40%;
 
 					/* FIM FORMULÁRIOS */ 
 
-					/* ESTILOS DA OS */ 
-.cabeçalho{
-
-	border-bottom: 1px solid #000;
-	clear: both;
-	
-}
-
-.dcliente{
-
-	text-align: left;
-	width: 100%;
-	padding-left: 5px;
-	border-bottom: 1px solid #000;
-}
-
-.dborder{
-	border-bottom: 1px solid #000;
-	width: 100%;
-}
-
-.dequip{
-
-	text-align: left;
-	
-}
-
-
-					/* FIM OS */ 
 
 .index{
 	text-align: center;

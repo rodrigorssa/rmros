@@ -12,6 +12,8 @@ window.location="cliente/";</script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
+
+
 </head>
 <body>
 
@@ -55,8 +57,11 @@ window.location="cliente/";</script>
 		<input type="password" id="pass" name="pass" placeholder="Senha" required/>
 
 		<input type="submit" id="btnlogin" class="btn verde" value="Entrar" />
+
+		<a href="recuperasenha.php" class="warn">Esqueceu a senha ?</a>
 		<!--<button type="submit"  id="btnlogin" class="btn_2 verde" />Entrar</button>-->
 	</form>
+
 	
 </div>
 </div>

@@ -18,7 +18,7 @@ telefone varchar(20) not null,
 complemento varchar,
 bairro varchar(20) not null,
 login varchar(50) not null,
-status boolean,
+ativo boolean default true,
 primary key(id)
 
 );
@@ -38,7 +38,7 @@ telefone varchar(20) not null,
 complemento varchar,
 bairro varchar(20) not null,
 login varchar(50) not null,
-status boolean,
+ativo boolean default true,
 primary key(id)
 
 );
@@ -50,7 +50,7 @@ sobrenome varchar(200) not null,
 email varchar(100) not null,
 senha varchar not null,
 login varchar(16) not null,
-primary key(id),
+primary key(id)
 
 );
 
@@ -60,7 +60,7 @@ create table compusers(
 
 id int not null,
 rg char(10) not null,
-cpf char(11) not null,
+cpf varchar(14) not null,
 endereco varchar(200) not null,
 numero int not null,
 telefone varchar(20) not null,
@@ -88,7 +88,7 @@ id serial not null,
 id_cliente int not null,
 marca varchar(50),
 tipo varchar(20),
-nserie int(50),
+nserie int,
 ram varchar(10),
 processador varchar(200),
 hd varchar(8),
@@ -114,4 +114,37 @@ foreign key(id_cliente) references users,
 foreign key(id_tecnico) references tecnicos,
 foreign key(id_equip) references equipamentos,
 foreign key(id_status) references status
- )
+ );
+
+create table chatusertec(
+id serial not null,
+iduser integer not null,
+idtec integer not null,
+idfrom integer not null,
+data timestamp default now(),
+mensagem varchar(255) not null,
+foreign key (idUser) references users,
+foreign key (idTec) references tecnicos
+);
+
+create table chatuseradm(
+id serial not null,
+iduser integer not null,
+idadm integer not null,
+idfrom integer not null,
+data timestamp default now(),
+mensagem varchar(255) not null,
+foreign key (idUser) references users,
+foreign key (idAdm) references admins
+);
+
+create table chattecadm(
+id serial not null,
+idtec integer not null,
+idadm integer not null,
+idfrom integer not null,
+data timestamp default now(),
+mensagem varchar(255) not null,
+foreign key (idAdm) references admins,
+foreign key (idTec) references tecnicos
+);

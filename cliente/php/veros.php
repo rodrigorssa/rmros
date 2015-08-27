@@ -3,12 +3,17 @@
     var pdf = new jsPDF('p', 'pt', 'letter');
     // source can be HTML-formatted string, or a reference
     // to an actual DOM element from which the text will be scraped.
-    source = $('#print')[0];
+    source = $('#veros')[0];
 
     // we support special element handlers. Register them with jQuery-style 
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
     // There is no support for any other type of selectors 
     // (class, of compound) at this time.
+    pdf.text("Assinatura do cliente",220,500);
+    pdf.text("_________________________________",155,530);
+
+    pdf.text("Assinatura do responsável",200,620);
+    pdf.text("_________________________________",155,650);
     specialElementHandlers = {
         // element with id of "bypass" - jQuery style selector
         '#bypassme': function (element, renderer) {
@@ -19,8 +24,8 @@
     margins = {
         top: 30,
         bottom: 60,
-        left: 40,
-        width: 522
+        left: 80,
+        width: 600
     };
     // all coords and widths are in jsPDF instance's declared units
     // 'inches' in this case
@@ -31,6 +36,8 @@
         'width': margins.width, // max width of content on PDF
         'elementHandlers': specialElementHandlers
     },
+
+
 
     function (dispose) {
         // dispose: object with X, Y of the last line add to the PDF 
@@ -48,6 +55,11 @@
         });
 	});
 </script>
+<style type="text/css">
+td{
+    padding: 5px;
+}
+</style>
 <?php 
 include_once '../../class/Carrega.class.php';
 
@@ -66,35 +78,79 @@ $tecnico=$os->retTecnico($dados->id_tecnico);
 $status=$os->retStatus($dados->id_status);
 
  ?>
- <div id="print">
-<div class="cabeçalho">
- <p><h1>RMR.OS</h1></p>
- <p><span>Rua exemplo teste teste n° 131</span></p>
- <p><span>Fragata - Pelotas - RS</span></p>
-<p><span>Ordem de serviço N° <?= $dados->id ?> </span></p>
-</div>
+ <table>
+    <thead>
+        <tr>
+            <td>
+                                                                    <h1>RMR.OS</h1>
+            </td>
+        </tr>
+    </thead>
+   <tbody>
+    <tr style="border-bottom:1px solid #000">
+    <td =>
+                                                    <p><span>Rua exemplo teste teste n° 131</span></p>
+        
+    
+   
+    
+                                                                                            <p><span>Fragata - Pelotas - RS</span></p>
+        
+    
+   
+    
+                                                                                                <p><span>Ordem de serviço N° <?= $dados->id ?> </span></p>
+        
+    </td>
+</tr>
+</tr>
 
 
-<div class="dcliente">
-<p><span>Nome: <?= htmlspecialchars($cliente['nome']." ".$cliente['sobrenome']) ?></span></p>
-<p><span>Endereço: <?= htmlspecialchars($cliente['endereco']) ?></span></p>
-<p><span>Email: <?= htmlspecialchars($cliente['email']) ?></span></p>
-<p><span>Telefone: <?= htmlspecialchars($cliente['telefone']) ?></span></p>
-</div>
+<tr align="left"><td><span>Nome: <?= htmlspecialchars($cliente['nome']." ".$cliente['sobrenome']) ?></span></td></tr>
+<tr align="left"><td>
 
-<div class="dcliente">
-<p><span>Equipamento: <?= htmlspecialchars($equip->tipo." ".$equip->marca." ".$equip->ram." ". $equip->hd) ?></span></p>
-<p><span>Numero de série: <?= htmlspecialchars($equip->nserie) ?></span></p>
-<p><span>Defeito informado:<?= htmlspecialchars($dados->defeito) ?></span></p>
-<p><span>Observações: <?= htmlspecialchars($dados->obs) ?></span></p>
-<p><span>Status: <?= $status['0'] ?></span></p>
-</div>
+<span>Endereço: <?= htmlspecialchars($cliente['endereco']) ?></span></td></tr>
 
-<div class="dcliente">
-<p><span>Técnico responsável: <?= $tecnico['nome']." ".$tecnico['sobrenome'] ?></span></p>
+<tr align="left"><td>
+<span>Email: <?= htmlspecialchars($cliente['email']) ?></span></td></tr>
 
-<p><span>Defeito Encontrado: <?= htmlspecialchars($dados->descricao) ?></span></p>
-</div>
-</div>
+<tr align="left" style="border-bottom:1px solid #000"><td>
+<span>Telefone: <?= htmlspecialchars($cliente['telefone']) ?></span></td></tr>
+
+<tr align="left"><td>
+<span>Equipamento: <?= htmlspecialchars($equip->tipo." ".$equip->marca." ".$equip->ram." ". $equip->hd) ?></span>
+</td></tr>
+
+<tr align="left"><td>
+<span>Numero de série: <?= htmlspecialchars($equip->nserie) ?></span>
+</td></tr> 
+
+<tr align="left"><td>
+<span>Defeito informado:<?= htmlspecialchars($dados->defeito) ?></span></td>
+
+</tr>
+<tr align="left" style="border-bottom:1px solid #000">
+<td>
+<span>Observações: <?= htmlspecialchars($dados->obs) ?></span></td>
+
+</tr>
+<tr align="left">
+<td>
+<span>Status: <?= $status['0'] ?></span>
+</td>
+
+</tr>
+<tr align="left">
+<td><span>Técnico responsável: <?= $tecnico['nome']." ".$tecnico['sobrenome'] ?></span></td>
+
+</tr>
+<tr align="left" style="border-bottom:1px solid #000">
+<td>
+<span>Defeito Encontrado: <?= htmlspecialchars($dados->descricao) ?></span>
+</td>
+</tr>
+</tbody>
+</table>
+
 <button class="btn verde btn_large" onclick="pdf()">Imprimir OS</button>
 <button class="btn verde btn_large" id="voltar">Voltar</button>
