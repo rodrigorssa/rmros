@@ -72,9 +72,9 @@ if($comp!=array()) $a="?acao=edit";
 			if($retorno->id_tecnico==$user['id']){ ?>
 			<option value="<?= $user['id'] ?>" selected><?= $user['nome'] ?></option>
 
-			<?php }else ?>
+			<?php }else {?>
 			<option value="<?= $user['id']?>"><?= $user['nome'] ?></option>
-			<?php  } ?>
+			<?php}  } ?>
 		</select>
 
 		<div class="aviso clb"><span>Status e descrição</span></div>
