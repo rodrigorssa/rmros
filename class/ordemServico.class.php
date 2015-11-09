@@ -16,6 +16,7 @@ Class ordemServico{
 	private $id_status;
 	private $obs;
 	private $enc_os;
+	private $previsao_entrega;
 
 
 public function __construct(){
@@ -37,6 +38,7 @@ public function inserir(){
 	$data->id_tecnico=$this->id_tecnico;
 	$data->id_equip=$this->id_equip;
 	$data->descricao=$this->descricao;
+	$data->previsao_entrega=$this->previsao_entrega;
 	$data->defeito=$this->defeito;
 	$data->id_status=$this->id_status;
 	$data->obs=$this->obs;

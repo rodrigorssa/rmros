@@ -1,5 +1,9 @@
 <script type="text/javascript">
 $(document).ready(function(){
+
+
+        $('#dataprev').mask("99/99/9999");
+        
 	        //form de selecionar equipamento
 	        $('#pos').submit(function(e){
 	        	e.preventDefault();
@@ -74,7 +78,8 @@ foreach ($list as $dados) {
 		<label for="dataini">Data/hora inicial:</label>
 		<input type="text" id="datini" name="dataini" value="<?= date('d/m/y H:m:i');  ?>" readonly/>
 		
-		
+		<label for="dataprev">Previsão de entrega:</label>
+			<input type="text" id="dataprev" name="dataprev" value="" />
 		<label for="tec">Técnico:</label>
 		<select class="select" name="id_tecnico" id="tec">
 

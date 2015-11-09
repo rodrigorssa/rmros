@@ -67,16 +67,16 @@ if($comp!=array()) $a="?acao=edit";
 		<option value="0">Selecione..</option>
 		<?php $lista=tec();
 
-		foreach ($lista as $user) { 
+			foreach ($lista as $user) { 
 
-			if($retorno->id_tecnico==$user['id']){ ?>
-			<option value="<?= $user['id'] ?>" selected><?= $user['nome'] ?></option>
+				if($retorno->id_tecnico==$user['id']){ ?>
+				<option value="<?= $user['id'] ?>" selected><?= $user['nome'] ?></option>
 
-			<?php }else {?>
-			<option value="<?= $user['id']?>"><?= $user['nome'] ?></option>
-			<?php}  } ?>
-		</select>
+				<?php } else{ ?>
+				<option value="<?= $user['id'] ?>"> <?= $user['nome'] ?></option>
 
+				 <?php } }?>
+			</select>
 		<div class="aviso clb"><span>Status e descrição</span></div>
 		
 		<label for="status">Status:</label>
@@ -96,11 +96,8 @@ if($comp!=array()) $a="?acao=edit";
 		</select>
 		
 		<p><label for="descricao">Descrição:   </label><input type="button"  onclick="update()" value="Inserir data atualização"></p>
-		<textarea name="descricao" ><?= $retorno->descricao; ?></textarea>
+		<textarea name="descricao" ><?= $retorno->descricao ?></textarea>
 		
 		<input type="submit"  class="btn btn_large  azul" value="Enviar" />
 		
 	</form>
-
-
-

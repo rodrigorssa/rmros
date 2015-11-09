@@ -84,7 +84,9 @@ if($os->enc_os==true){ ?> <script type="text/javascript">
 
 			<label for="dataini">Data/hora inicial:</label>
 			<input type="text" id="datini" name="dataini" value="<?= date('d/m/y H:m:i',strtotime($os->data_horaentrada));  ?>" readonly/>
-		
+			
+			<label for="dataprev">Previsão de entrega:</label>
+			<input type="text" id="datprev" name="dataprev" value="<?php if($os->previsao_entrega!=null) echo date('d/m/y',strtotime($os->previsao_entrega));  ?>" readonly/>
 		
 		<label for="tec">Técnico:</label>
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../css/dataTables.responsive.css">
     <link rel="stylesheet" type="text/css" href="../../css/jquery.dataTables.min.css">
     <script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../../js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="../../js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="../../js/index_sem_ajax.js"></script>
@@ -16,6 +17,7 @@
     <script>
     $(document).ready(function(){
 
+        $('#dataprev').mask("99/99/9999");
 
         //form para selecionar usuario
         $('.form').submit(function(e){
