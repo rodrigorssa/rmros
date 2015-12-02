@@ -10,7 +10,11 @@ $obj->id_equip=isset($_POST['id_equip']) ? $_POST['id_equip'] : "";
 $obj->id_status=isset($_POST['id_status']) ? $_POST['id_status'] : "";
 $obj->descricao=isset($_POST['descricao']) ? $_POST['descricao'] : "";
 $obj->defeito=isset($_POST['defeito']) ? $_POST['defeito'] : "";
-$obj->previsao_entrega=isset($_POST['dataprev']) ? $_POST['dataprev'] : "";
+if (isset($_POST['dataprev']) && $_POST['dataprev']!="" ) {
+	$obj->previsao_entrega=$_POST['dataprev'];
+}else{
+	$obj->previsao_entrega=null;
+}
 $obj->obs=isset($_POST['obs']) ? $_POST['obs'] : "";
 $obj->data_horasaida=isset($_POST['enc_os']) ? date('d/m/Y H:m:s') : null;
 $obj->enc_os=isset($_POST['enc_os']) ? true : false;
