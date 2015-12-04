@@ -42,7 +42,7 @@ if(isset($_GET['comp'])){
 	$comp= R::load("compusers", $id);
 }
 else{
-	$comp= new compUsers();
+	$comp= new compusers();
 }
 
 

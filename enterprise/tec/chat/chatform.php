@@ -51,7 +51,7 @@ if(isset($_POST['iduser'])){
 
 	<div class="form_index" style="position:relative">
 	<input type="hidden" name="idtec" value="<?= $_SESSION['tec'] ?>">
-	<input type="hidden" name="idfrom" value= "<?= $_SESSION['tec'] ?>" >
+	<input type="hidden" name="idfrom" value= "1" >
 <textarea name="mensagem" required></textarea>
 <input class="btn amarelo" type="submit" value="Enviar">
 </div>

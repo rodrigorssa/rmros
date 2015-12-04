@@ -46,7 +46,7 @@
 		<?php 
 		$tr=new users();
 		$lista=$tr->getAll();
-		$td= new compUsers();
+		$td= new compusers();
 
 		foreach ($lista as $user) {
 			$cpf=$td->retonly($user->id);

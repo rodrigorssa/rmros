@@ -29,7 +29,7 @@ $data = '';
 if($array!=array()){
 
 	foreach ($array as $mensagem) {
-		if($mensagem['idfrom']==$idtec){
+		if($mensagem['idfrom']=="1"){
 			$data .= '<span class="chat-msg0 flr clb amarelo">' . htmlspecialchars($mensagem["mensagem"]) . '</span>';
 		}else{
 			$data .= '<span class="chat-msg1 fll clb">' . htmlspecialchars($mensagem["mensagem"]) . '</span>';
