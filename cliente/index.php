@@ -102,7 +102,7 @@ $obj=new ordemServico();
 	</div>
 
 <div class="box box3 hide" id="veros">
-<div id="retorno"></div>
+<div id="retorno"> <img src="../img/loading.gif" alt="loading..." ></div>
 
 </div>
 </section>

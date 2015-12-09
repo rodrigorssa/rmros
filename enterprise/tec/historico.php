@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="../../js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="../../js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="../../js/dataTables.responsive.min.js"></script>
+	<script type="text/javascript" src="../../js/jspdf.min.js"></script>
 	<script type="text/javascript" src="../../js/index_sem_ajax.js"></script>
 	<script>
  $(document).ready(function(){

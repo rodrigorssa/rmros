@@ -2,7 +2,7 @@
 
 // Inclui o arquivo class.phpmailer.php localizado na pasta phpmailer
 
-require("c:/apache24/htdocs/tcc/PHPMailer/class.phpmailer.php");
+include 'PHPMailer/class.phpmailer.php';
 
 date_default_timezone_set('UTC');
 

@@ -29,6 +29,6 @@ if(isset($_GET['edit'])){
 }
 
 if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || $_SERVER['HTTP_X_REQUESTED_WITH'] !== 'XMLHttpRequest') {
-    header("Location: ../clientes.php");
+    header("Location: ../os.php");
 }
  ?>

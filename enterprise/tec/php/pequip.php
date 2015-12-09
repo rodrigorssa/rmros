@@ -36,7 +36,7 @@ location.reload();
 
 $dados=R::findAll("equipamentos","id_cliente= $id"); 
 
- if($dados==array()) die("<span>Nada encontrado.</span>");?>
+ if($dados==array()) die("<span>Nada encontrado.</span> <a href='equipamentos.php?idCl=<?= $id  ?>' class='btn amarelo btn-pdd' >NOVO EQUIPAMENTO</a>");?>
 
 <span class="aviso">*Para melhor visualização, utilizar modo paisagem.</span>
 
@@ -50,7 +50,7 @@ $dados=R::findAll("equipamentos","id_cliente= $id");
 <form action="php/pos.php" id="pequip" method="post">
 			<input type="hidden" name="id_cliente" value="<?= $valor->id_cliente ?>">
 			<input type="hidden" name="id" value="<?= $valor->id ?>">
-			<input type="submit" class="bdazul" value="<?= $valor->id."   ".$valor->tipo." ".$valor->marca." N°: ".$valor->nserie?>" />
+			<input type="submit" class="bdamarelo" value="<?= $valor->id."   ".$valor->tipo." ".$valor->marca." N°: ".$valor->nserie?>" />
 		
 	</form>
 </div>
