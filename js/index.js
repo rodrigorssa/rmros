@@ -41,9 +41,6 @@ $(document).ready(function(){
 				if(w){
 					alert(w);
 					$('input[type=submit]').val("Enviar");
-					$form.each(function(){
-						this.reset();
-					});
 
 					return;
 

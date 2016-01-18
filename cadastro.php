@@ -2,7 +2,7 @@
 
 require_once "/class/Carrega.class.php";
 
-include_once 'valida-cpf.php';
+
 
 if(!isset($_SESSION)) session_start();
 
@@ -15,6 +15,7 @@ $user= isset($_POST['user']) ? $_POST['user'] : '';
 $pass= isset($_POST['pass']) ? $_POST['pass'] : '';
 $mail= isset($_POST['mail']) ? $_POST['mail'] : '';
 
+include_once 'valida-cadastro.php';
 
 $obj= new users();
 
@@ -41,6 +42,7 @@ $_SESSION['user']=$id;
 
 if(isset($_GET['comp'])){
 
+include_once 'valida-cpf.php';
 
 
 $id= isset($_POST['id']) ? $_POST['id'] : '';

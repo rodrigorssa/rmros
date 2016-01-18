@@ -30,9 +30,9 @@ if($array!=array()){
 
 	foreach ($array as $mensagem) {
 		if($mensagem['idfrom']=="0"){
-			$data .= '<span class="chat-msg0 flr clb verde">' . htmlspecialchars($mensagem["mensagem"]) . '</span>';
+			$data .= '<span class="chat-msg0 flr clb verde">' . htmlspecialchars($mensagem["mensagem"] ) .'</span><p class="chat-data flr clb">'. $mensagem["data"].'<p>';
 		}else{
-			$data .= '<span class="chat-msg1 fll clb">' . htmlspecialchars($mensagem["mensagem"]) . '</span>';
+			$data .= '<span class="chat-msg1 fll clb">' . htmlspecialchars($mensagem["mensagem"]) . '</span><p class="chat-data fll clb">'. $mensagem["data"].'<p>';
 		}
 	}
 

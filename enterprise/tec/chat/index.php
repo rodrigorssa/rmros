@@ -59,14 +59,15 @@ DIREITA
 <div class="chat-users">
 <?php $obj=new funcionarios("admins");
 	
-	 foreach ($obj->findNomes() as $admin) { ?>
+	 foreach ($obj->findNomes() as $admin) { 
+	 	if($admin['ativo']==true){ ?>
 	 <form method="post" class="selUser" action="chatform.php" >
 	 	<input type="hidden" name="idadm" value="<?= $admin['id'] ?>">
 		<input type="hidden" name="nome"  value="<?= $admin['nome'].' '.$admin['sobrenome'] ?>">
 	 	<input type="submit"  value="<?= $admin['nome'].' '.$admin['sobrenome'] ?>">
 	 	</form>
 
-	<?php }  ?>
+	<?php } } ?>
 
 </div>
 

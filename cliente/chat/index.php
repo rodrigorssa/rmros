@@ -11,7 +11,6 @@
 	<script type="text/javascript" src="js/chat.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
 
@@ -59,14 +58,15 @@ DIREITA
 <div class="chat-users">
 <?php $obj=new funcionarios("admins");
 	
-	 foreach ($obj->findNomes() as $admin) { ?>
+	 foreach ($obj->findNomes() as $admin) { 
+	 	if($admin['ativo']==true){ ?>
 	 <form method="post" class="selUser" action="chatform.php" >
 	 	<input type="hidden" name="idadm" value="<?= $admin['id'] ?>">
 		<input type="hidden" name="nome"  value="<?= $admin['nome'].' '.$admin['sobrenome'] ?>">
 	 	<input type="submit"  value="<?= $admin['nome'].' '.$admin['sobrenome'] ?>">
 	 	</form>
 
-	<?php }  ?>
+	<?php } }  ?>
 
 </div>
 
@@ -75,14 +75,15 @@ DIREITA
 
 <?php $obj=new funcionarios("tecnicos");
 	
-	 foreach ($obj->findNomes() as $admin) { ?>
+	 foreach ($obj->findNomes() as $admin) { 
+	 	if($admin['ativo']==true){ ?>
 	 	 <form method="post" class="selUser" action="chatform.php" >
 	 	<input type="hidden" name="idtec" value="<?= $admin['id'] ?>">
 		<input type="hidden" name="nome"  value="<?= $admin['nome'].' '.$admin['sobrenome'] ?>">
 	 	<input type="submit"  value="<?= $admin['nome'].' '.$admin['sobrenome'] ?>">
 	 	</form>
 
-	<?php }  ?></div>
+	<?php } }  ?></div>
 </aside>
 <div class="foot verde"> <p class="p_foot">RMR.OS - Todos os direitos reservados.</p></div>
 </body>
