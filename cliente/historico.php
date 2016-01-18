@@ -35,6 +35,22 @@
            }).error('Ocorreu algum erro, tente mais tarde');
         }); 
 
+//SELECIONAR CHAMADOS ABERTOS E FECHADOS
+
+$('input:radio').on("change",function(){
+	if($(this).val()=="aberto"){	
+		$('#chaberto').fadeIn();
+		$('#chfechado').fadeOut();
+	}
+		if($(this).val()=="fechado"){	
+		$('#chfechado').fadeIn();
+		$('#chaberto').fadeOut();
+		
+	}
+
+});
+
+
 
     }); 
 

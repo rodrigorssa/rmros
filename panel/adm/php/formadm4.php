@@ -51,25 +51,25 @@ $user=user($retorno);
 		</select>
 	</div>
 	<label for="marca">Marca:</label>
-	<input type="text" name="marca" id="marca" value="<?php if($retorno!=array()) echo $retorno->marca;  ?>"   />
+	<input type="text" name="marca" id="marca" value="<?php if($retorno!=array()) echo $retorno->marca;  ?>"   required/>
 
 	<label for="nserie">Numero de Série:</label>
-	<input type="text" name="nserie" id="nserie" value="<?php if($retorno!=array()) echo $retorno->nserie;  ?>"   />
+	<input type="text" name="nserie" id="nserie" value="<?php if($retorno!=array()) echo $retorno->nserie;  ?>"   required/>
 
 
 	<label for="ram">Memória RAM:</label>
-	<input type="text" id="ram" name="ram" value="<?php if($retorno!=array()) echo $retorno->ram;  ?>" />
+	<input type="text" id="ram" name="ram" value="<?php if($retorno!=array()) echo $retorno->ram;  ?>" required/>
 
 
 	<label for="processador">Processador:</label>
-	<input type="text" name="processador" id="processador" value="<?php if($retorno!=array()) echo $retorno->processador;  ?>" />
+	<input type="text" name="processador" id="processador" value="<?php if($retorno!=array()) echo $retorno->processador;  ?>" required/>
 
 
 	<label for="hd">Hard Disk:</label>
-	<input type="text" id="hd" name="hd" value="<?php if($retorno!=array()) echo $retorno->hd;  ?>" />
+	<input type="text" id="hd" name="hd" value="<?php if($retorno!=array()) echo $retorno->hd;  ?>" required/>
 
 	<label for="video">Placa de vídeo:</label>
-	<input type="text" id="video" name="video" value="<?php if($retorno!=array()) echo $retorno->video;  ?>" />
+	<input type="text" id="video" name="video" value="<?php if($retorno!=array()) echo $retorno->video;  ?>" required/>
 
 <input type="hidden" name="id_cliente" value="<?php if(isset($_GET['idCl'])) echo $_GET['idCl']; else echo $retorno->id_cliente; ?>" />
 	

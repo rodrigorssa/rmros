@@ -1,6 +1,6 @@
 <?php 
 
-require_once "/class/Carrega.class.php";
+require_once "class/Carrega.class.php";
 
 
 
