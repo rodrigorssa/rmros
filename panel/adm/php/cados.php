@@ -16,7 +16,7 @@ if (isset($_POST['dataprev']) && $_POST['dataprev']!="" ) {
 	$obj->previsao_entrega=null;
 }
 $obj->obs=isset($_POST['obs']) ? $_POST['obs'] : "";
-$obj->data_horasaida=isset($_POST['enc_os']) ? date('d/m/Y H:m:s') : null;
+$obj->data_horasaida=isset($_POST['enc_os']) ? date('d-m-Y H:m:s') : null;
 $obj->enc_os=isset($_POST['enc_os']) ? true : false;
 
 

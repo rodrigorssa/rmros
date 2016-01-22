@@ -58,7 +58,7 @@ if($comp!=array()) $a="?acao=edit";
 
 	
 	<label for="datfinal">Data/hora encerramento:</label>
-	<input type="text" name="data_horafim" id="datfinal" value="<?=date('d/m/Y H:m:s'); ?>"  />
+	<input type="text" name="data_horafim" id="datfinal" value="<?php if($retorno->data_horafim=="") echo date('d-m-Y H:m:s'); else echo date('d-m-y H:m:i',strtotime($retorno->data_horafim)) ?>"  />
 
 
 	

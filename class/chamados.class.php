@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('UTC');
 include_once 'rb.class.php';
 include_once "DB.class.php";
 
@@ -49,7 +50,7 @@ public function atualizar($id){
 	$data->id_tecnico=$tec;
 	$data->descricao=$this->descricao;
 	$data->status=$this->status;
-	$data->data_horafim=$this->data_horafim;
+	$data->data_horafim=date('Y-m-d H:m:i',strtotime($this->data_horafim));
 
 	R::store($data);
 }
