@@ -14,6 +14,10 @@ $obj->sobrenome=$sobre= isset($_POST['sobrenome']) ? $_POST['sobrenome'] : '';
 $obj->login=$user= isset($_POST['login']) ? $_POST['login'] : '';
 $obj->email=$mail= isset($_POST['email']) ? $_POST['email'] : '';
 $obj->rg=$rg= isset($_POST['rg']) ? $_POST['rg'] : '';
+$obj->senha=$pass= isset($_POST['pass']) ? $_POST['pass'] : '';
+
+include_once 'validadm.php';
+
 
 $cpf= isset($_POST['cpf']) ? $_POST['cpf'] : '';
 if (validaCPF($cpf)) {
@@ -29,7 +33,7 @@ $obj->numero=$numero= isset($_POST['numero']) ? $_POST['numero'] : '';
 $obj->complemento=$complemento= isset($_POST['comp']) ? $_POST['comp'] : '';
 $obj->telefone=$telefone= isset($_POST['telefone']) ? $_POST['telefone'] : '';
 $obj->bairro=$bairro= isset($_POST['bairro']) ? $_POST['bairro'] : '';
-$obj->senha=$pass= isset($_POST['pass']) ? $_POST['pass'] : '';
+
 $obj->ativo=$ativo= isset($_POST['ativo']) ? true : false;
 
 
